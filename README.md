@@ -15,3 +15,4 @@ Goals
 - dot file caching for sensible defaults
 - customizable token lists from well known publishers
 - Long lived data polling
+- Wallet Connect Adapter for generating and signing transactions
