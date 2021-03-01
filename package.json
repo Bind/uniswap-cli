@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "d3-shape": "^2.0.0",
+    "drawille-canvas": "^1.2.1",
+    "import-jsx": "^4.0.0",
+    "ink": "^3.0.8",
+    "performance-now": "^2.1.0",
+    "react": "^17.0.1"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
