@@ -6,11 +6,8 @@ const Example = importJsx("./example");
 const { useRef } = require("react");
 
 const Table = () => {
-
   return (
-    <Box
-    flexGrow={1}
-    >
+    <Box flexGrow={1}>
       <Example />
     </Box>
   );
