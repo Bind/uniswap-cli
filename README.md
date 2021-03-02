@@ -16,3 +16,10 @@ Goals
 - customizable token lists from well known publishers
 - Long lived data polling
 - Wallet Connect Adapter for generating and signing transactions
+
+
+
+Chart implementations:
+
+Vtop
+https://github.com/MrRio/vtop/blob/e39e183e232e2b9eadae2198948d1f87aa277921/app.js#L193

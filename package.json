@@ -1,7 +1,11 @@
 {
   "dependencies": {
+    "bresenham": "^0.0.4",
+    "d3-array": "^2.11.0",
+    "d3-scale": "^3.2.3",
     "d3-shape": "^2.0.0",
     "drawille-canvas": "^1.2.1",
+    "gl-matrix": "^3.3.0",
     "import-jsx": "^4.0.0",
     "ink": "^3.0.8",
     "performance-now": "^2.1.0",
