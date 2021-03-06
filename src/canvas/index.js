@@ -5,7 +5,13 @@ var scaleLinear = require("d3-scale");
 const React = require("react");
 const { Text, Box, Newline } = require("ink");
 
-const CanvasComponent = ({ width, height, draw, framerate = 1000 / 30 }) => {
+const CanvasComponent = ({
+  color,
+  width,
+  height,
+  draw,
+  framerate = 1000 / 30,
+}) => {
   const [content, setContent] = React.useState("tempor");
   React.useEffect(() => {
     const canvas = new Canvas(width, height * 2);
@@ -16,8 +22,8 @@ const CanvasComponent = ({ width, height, draw, framerate = 1000 / 30 }) => {
     return () => {
       clearInterval(timer);
     };
-  }, [width, height]);
-  return <Text color="white">{content}</Text>;
+  }, [width, height, draw]);
+  return <Text color={color}>{content}</Text>;
 };
 
 module.exports = CanvasComponent;

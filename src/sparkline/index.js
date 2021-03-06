@@ -24,12 +24,12 @@ function generateScales(data, width, height, selectors) {
     .scaleLinear()
     .domain([selectors.minY(data), selectors.maxY(data)])
     .range([0, height * 2]);
-  console.log(
-    selectors.minX(data) * 1000,
-    selectors.maxX(data) * 1000,
-    selectors.minY(data),
-    selectors.maxY(data)
-  );
+  // console.log(
+  //   selectors.minX(data) * 1000,
+  //   selectors.maxX(data) * 1000,
+  //   selectors.minY(data),
+  //   selectors.maxY(data)
+  // );
   return { xScale, yScale };
 }
 

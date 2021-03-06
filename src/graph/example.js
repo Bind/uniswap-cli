@@ -3,6 +3,7 @@ var rawData = require("./tmp.json");
 var d3Array = require("d3-array");
 const React = require("react");
 const { Text, Box, Newline } = require("ink");
+const LogoComponent = importJsx("../logo");
 const Sparkline = importJsx("../sparkline");
 
 const scaleSelectors = {
@@ -14,7 +15,8 @@ const scaleSelectors = {
 
 const ExampleComponent = ({ width, height, data }) => {
   return (
-    <Box borderColor="red" borderStyle="round" flexDirection={"column"}>
+    <Box flexDirection={"column"}>
+      <LogoComponent height={128} width={128} />
       <Text color={"white"}>UNI-ETH | last 7</Text>
       <Newline />
       <Sparkline
