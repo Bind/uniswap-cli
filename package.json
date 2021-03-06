@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.21.1",
     "bresenham": "^0.0.4",
     "commander": "^7.1.0",
     "d3-array": "^2.11.0",
