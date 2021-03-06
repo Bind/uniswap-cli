@@ -58,9 +58,7 @@ const CanvasComponent = () => {
       clearInterval(timer);
     };
   }, []);
-  return (
-      content
-  );
+  return content;
 };
 
 module.exports = CanvasComponent;
