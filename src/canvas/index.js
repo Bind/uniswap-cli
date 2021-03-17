@@ -12,7 +12,7 @@ const CanvasComponent = ({
   draw,
   framerate = 1000 / 30,
 }) => {
-  const [content, setContent] = React.useState("tempor");
+  const [content, setContent] = React.useState("");
   React.useEffect(() => {
     const canvas = new Canvas(width, height * 2);
     const c = canvas.getContext("2d");

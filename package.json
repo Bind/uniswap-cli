@@ -1,4 +1,6 @@
 {
+  "name":"uni",
+  "bin": "./src/index.js",
   "dependencies": {
     "axios": "^0.21.1",
     "bresenham": "^0.0.4",

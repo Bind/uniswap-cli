@@ -11,7 +11,7 @@ const getLogo = async (width, height) => {
   if (typeof LogoPointMatrix === "undefined") {
     LogoPointMatrix = await new Promise((resolve, reject) =>
       fs
-        .createReadStream("./src/logo/uniswap-128.png")
+        .createReadStream(`${__dirname}/uniswap-128.png`)
         .pipe(
           new PNG({
             filterType: 4,
