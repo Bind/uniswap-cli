@@ -1,6 +1,6 @@
 # uniswap-cli
 
-![WIP](https://terminalizer.com/view/b8f15a304746)
+![WIP](soooon.gif)
 
 - Insanely fast start time
 - dot file caching for sensible defaults
