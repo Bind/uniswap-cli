@@ -1,21 +1,17 @@
 # uniswap-cli
 
-We aim to build a best in class CLI for quickly referencing Uniswap positions and executing trades. Inspired by https://twitter.com/mikedemarais/status/1359302557433225218?s=20
-
-https://github.com/tarkah/tickrs
-
-https://github.com/zpkg/ticker-term
-
-https://github.com/achannarasappa/ticker
-
-Goals
+![WIP](https://terminalizer.com/view/b8f15a304746)
 
 - Insanely fast start time
 - dot file caching for sensible defaults
 - customizable token lists from well known publishers
 - Long lived data polling
 - Wallet Connect Adapter for generating and signing transactions
+- Be easily extensible by a Frontend Engineer
 
+
+
+Dev Notes:
 Chart implementations:
 
 Vtop

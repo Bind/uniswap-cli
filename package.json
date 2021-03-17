@@ -1,4 +1,6 @@
 {
+  "name":"uni",
+  "bin": "./src/index.js",
   "dependencies": {
     "axios": "^0.21.1",
     "bresenham": "^0.0.4",
@@ -11,6 +13,7 @@
     "import-jsx": "^4.0.0",
     "ink": "^3.0.8",
     "performance-now": "^2.1.0",
+    "pngjs": "^6.0.0",
     "react": "^17.0.1"
   },
   "scripts": {
