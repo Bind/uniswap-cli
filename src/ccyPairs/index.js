@@ -3,30 +3,10 @@ const importJsx = require("import-jsx");
 const { Box, Text, Spacer } = require("ink");
 const Spark = importJsx("./spark");
 
-const Table = () => {
-  const data = [
-    {
-      ticker: "BTCUSD",
-      bid: 53200,
-      ask: 52199,
-      last: 52199.01,
-      sparkLine: <Spark></Spark>,
-    },
-    {
-      ticker: "ETHUSD",
-      bid: 53200,
-      ask: 52199,
-      last: 52199.01,
-      sparkLine: <Spark></Spark>,
-    },
-    {
-      ticker: "LTCUSD",
-      bid: 53200,
-      ask: 52199,
-      last: 52199.01,
-      sparkLine: <Spark></Spark>,
-    },
-  ];
+const Table = ({ pairs }) => {
+  console.log("Pairs: ", typeof pairs);
+  // TEMP Until we figure out what data to pass into this thing.
+  const sparkline = <Spark />;
 
   return (
     <Box flexDirection="column" margin={1} flexGrow={1} borderStyle={"round"}>
@@ -58,58 +38,43 @@ const Table = () => {
   );
 };
 
-const DetailTable = () => {
-  const data = [
-    {
-      ticker: "BTCUSD",
-      bid: 53200,
-      ask: 52199,
-      last: 52199.01,
-      ohlcv: [49000, 59000, 40000, 53000, 120129912],
-      sparkLine: <Spark></Spark>,
-    },
-    {
-      ticker: "ETHUSD",
-      bid: 53200,
-      ask: 52199,
-      last: 52199.01,
-      ohlcv: [49000, 59000, 40000, 53000, 120129912],
-      sparkLine: <Spark></Spark>,
-    },
-    {
-      ticker: "LTCUSD",
-      bid: 53200,
-      ask: 52199,
-      last: 52199.01,
-      ohlcv: [49000, 59000, 40000, 53000, 120129912],
-      sparkLine: <Spark></Spark>,
-    },
-  ];
+const DetailTable = ({ pairs }) => {
+  console.log("Pairs: ", typeof pairs);
+  // TEMP Until we figure out what data to pass into this thing.
+  const sparkline = <Spark />;
 
   return (
     <Box flexDirection="column" margin={1} flexGrow={1} borderStyle={"round"}>
-      {data.map((item) => {
+      {pairs.map((item) => {
+        const ticker = `${item.token0.symbol}-${item.token1.symbol}`;
+        const itemId = item.id;
+
         return (
           <Box
-            key={item.ticker}
+            key={item.id}
             flexDirection="row"
             borderStyle={"single"}
             justifyContent={"space-between"}
           >
             <Box flexDirection={"column"}>
-              <Text>Ticker: {item.ticker}</Text>
-              <Text color={"gray"}>Last: {item.last}</Text>
-              <Text color={"red"}>Bid: {item.bid}</Text>
-              <Text color={"green"}>Ask: {item.ask}</Text>
+              <Text>Ticker: {ticker}</Text>
+              <Text>ID: {itemId}</Text>
+              <Text color={"gray"}>
+                {item.token0.symbol} Price: {item.token0Price}
+              </Text>
+              <Text color={"gray"}>
+                {item.token1.symbol} Price: {item.token1Price}
+              </Text>
             </Box>
             <Box flexDirection={"column"}>
-              <Text color={"green"}>Open: {item.ohlcv[0]}</Text>
-              <Text color={"green"}>High: {item.ohlcv[1]}</Text>
-              <Text color={"green"}>Low: {item.ohlcv[2]}</Text>
-              <Text color={"green"}>Close: {item.ohlcv[3]}</Text>
-              <Text color={"gray"}>Vol: {item.ohlcv[4]}</Text>
+              <Text color={"green"}>
+                {item.token0.symbol} Reserve: {item.reserve0}
+              </Text>
+              <Text color={"green"}>
+                {item.token1.symbol} Reserve: {item.reserve1}
+              </Text>
             </Box>
-            <Text>{item.sparkLine}</Text>
+            <Text>{sparkline}</Text>
           </Box>
         );
       })}
