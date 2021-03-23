@@ -45,6 +45,41 @@ const fetchPairs = async () => {
   }
 };
 
+const fetchById = async (id) => {
+  try {
+    const query = `{
+           tokenDayDatas(orderBy: date, orderDirection: asc,
+            where: {
+              token: "${id}"
+            }
+           ) {
+              id
+              date
+              priceUSD
+              totalLiquidityToken
+              totalLiquidityUSD
+              totalLiquidityETH
+              dailyVolumeETH
+              dailyVolumeToken
+              dailyVolumeUSD
+           }
+          }`;
+
+    const response = await axios({
+      url: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+      method: "POST",
+      data: {
+        query,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log("Failed to fetch currency pairs: ", error);
+    throw Error("Failed to fetch currency pairs");
+  }
+};
+
 module.exports = {
   fetchPairs,
+  fetchById,
 };
