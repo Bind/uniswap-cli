@@ -82,7 +82,7 @@ const DetailTable = ({ pairs }) => {
   );
 };
 
-module.exports = {
+export default  {
   Table,
   DetailTable,
 };

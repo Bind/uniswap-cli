@@ -1,9 +1,7 @@
-var Canvas = require("./drawille");
-var bresenham = require("bresenham");
-var glMatrix = require("gl-matrix");
-var earcut = require("earcut");
-var mat2d = glMatrix.mat2d;
-var vec2 = glMatrix.vec2;
+import Canvas from "./drawille";
+import bresenham from "bresenham";
+import {mat2d, vec2} from "gl-matrix";
+import earcut from "earcut";
 
 function Context(width, height) {
   this._canvas = new Canvas(width, height);
@@ -361,4 +359,4 @@ function clamp(value, min, max) {
   return Math.round(Math.min(Math.max(value, min), max));
 }
 
-module.exports = Context;
+export default  Context;

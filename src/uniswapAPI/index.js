@@ -79,7 +79,8 @@ const fetchById = async (id) => {
   }
 };
 
-module.exports = {
+
+export default  {
   fetchPairs,
   fetchById,
 };

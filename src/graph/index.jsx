@@ -1,9 +1,6 @@
-const React = require("react");
-const importJsx = require("import-jsx");
-const { useState, useEffect } = require("react");
-const { Box, Text, measureElement } = require("ink");
-const Example = importJsx("./example");
-const { useRef } = require("react");
+import React, { useRef} from "react";
+import { Box, measureElement } from "ink";
+import Example from "./example.jsx"
 
 const Table = () => {
   const [height, setHeight] = React.useState(0);
@@ -21,4 +18,4 @@ const Table = () => {
   );
 };
 
-module.exports = Table;
+export default Table;

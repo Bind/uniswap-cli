@@ -1,9 +1,7 @@
-const Canvas = require("../../deps/canvas");
-var d3 = require("d3-shape");
-var d3Array = require("d3-array");
-var scaleLinear = require("d3-scale");
-const React = require("react");
-const { Text, Box, Newline } = require("ink");
+
+import Canvas from "../../deps/canvas";
+import React from "react";
+import { Text } from "ink";
 
 const CanvasComponent = ({
   color,
@@ -26,4 +24,4 @@ const CanvasComponent = ({
   return <Text color={color}>{content}</Text>;
 };
 
-module.exports = CanvasComponent;
+export default  CanvasComponent;

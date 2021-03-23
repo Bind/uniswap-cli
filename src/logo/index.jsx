@@ -1,7 +1,6 @@
-const importJsx = require("import-jsx");
-const React = require("react");
-const GetLogo = require("./GetLogo.js");
-const CanvasComponent = importJsx("../canvas");
+import React from "react";
+import GetLogo from "./GetLogo.js";
+import CanvasComponent  from "../canvas/index.jsx";
 
 const LogoComponent = ({ height, width }) => {
   const [loaded, setLoaded] = React.useState(false);
@@ -42,4 +41,4 @@ const LogoComponent = ({ height, width }) => {
   );
 };
 
-module.exports = LogoComponent;
+export default LogoComponent;

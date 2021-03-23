@@ -1,9 +1,12 @@
 {
-  "name":"uni",
+  "name": "uni",
   "bin": "./src/index.js",
+  "node": "./dist/bundle.js",
   "dependencies": {
+    "@babel/runtime": "^7.13.10",
     "axios": "^0.21.1",
     "bresenham": "^0.0.4",
+    "bufferutil": "^4.0.3",
     "commander": "^7.1.0",
     "d3-array": "^2.11.0",
     "d3-scale": "^3.2.3",
@@ -18,9 +21,21 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "pairs": "node src/pairs.js"
+    "pairs": "node src/pairs.js",
+    "build": "webpack"
   },
   "devDependencies": {
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "babel-loader": "^8.2.2",
+    "babel-node": "^0.0.1-security",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
     "prettier": "^2.2.1"
   }
 }

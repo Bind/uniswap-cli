@@ -1,6 +1,7 @@
-var fs = require("fs");
-var PNG = require("pngjs").PNG;
-var RawCanvas = require("../../deps/drawille.js");
+import fs from 'fs';
+import {PNG} from"pngjs";
+import RawCanvas from "../../deps/drawille.js";
+
 
 // Needs work, ideally we can pass it in a height and width and it would scale image to canvas size
 // Currently 3 image sizes 128 looks the best
@@ -33,4 +34,4 @@ const getLogo = async (width, height) => {
   return LogoPointMatrix;
 };
 
-module.exports = getLogo;
+export default getLogo;

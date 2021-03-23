@@ -61,4 +61,4 @@ const CanvasComponent = () => {
   return content;
 };
 
-module.exports = CanvasComponent;
+export default  CanvasComponent;

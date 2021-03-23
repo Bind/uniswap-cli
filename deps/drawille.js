@@ -5,7 +5,7 @@ const map = [
   [0x40, 0x80],
 ];
 
-class Canvas {
+export default class Canvas {
   constructor(width, height) {
     this.width = width || process.stdout.columns * 2 - 2;
     this.height = height || process.stdout.rows * 4;
@@ -74,4 +74,3 @@ Object.keys(methods).forEach((method) => {
   };
 });
 
-module.exports = Canvas;

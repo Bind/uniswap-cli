@@ -1,10 +1,8 @@
-#!/usr/bin/env node
-
-
-const importJsx = require("import-jsx");
-const { render } = require("ink");
-const React = require("react");
 process.env.FORCE_COLOR = "1";
-const App = importJsx("./graph");
+
+import { render } from "ink";
+import React from "react";
+
+import App from "./graph/index.jsx";
 
 render(React.createElement(App));
