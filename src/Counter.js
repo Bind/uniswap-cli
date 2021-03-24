@@ -1,6 +1,5 @@
-const React = require("react");
-const { useState, useEffect } = require("react");
-const { render, Text } = require("ink");
+import React, { useState, useEffect } from 'react'
+import { render, Text } from "ink";
 
 const Counter = () => {
   const [counter, setCounter] = useState(0);

@@ -1,9 +1,8 @@
-const React = require("react");
-const importJsx = require("import-jsx");
-const { Box, Text, Spacer } = require("ink");
-const Spark = importJsx("./spark");
+import React from 'react'
+import { Box, Text, Spacer } from "ink"
+import Spark from "./spark";
 
-const Table = ({ pairs }) => {
+export const Table = ({ pairs }) => {
   console.log("Pairs: ", typeof pairs);
   // TEMP Until we figure out what data to pass into this thing.
   const sparkline = <Spark />;
@@ -38,7 +37,7 @@ const Table = ({ pairs }) => {
   );
 };
 
-const DetailTable = ({ pairs }) => {
+export const DetailTable = ({ pairs }) => {
   console.log("Pairs: ", typeof pairs);
   // TEMP Until we figure out what data to pass into this thing.
   const sparkline = <Spark />;
@@ -82,7 +81,4 @@ const DetailTable = ({ pairs }) => {
   );
 };
 
-export default  {
-  Table,
-  DetailTable,
-};
+
