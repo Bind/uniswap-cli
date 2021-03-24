@@ -1,12 +1,7 @@
-import React from 'react'
-import { Box, Text, Spacer } from "ink"
-import Spark from "./spark";
+import React from "react";
+import { Box, Text, Spacer } from "ink";
 
 export const Table = ({ pairs }) => {
-  console.log("Pairs: ", typeof pairs);
-  // TEMP Until we figure out what data to pass into this thing.
-  const sparkline = <Spark />;
-
   return (
     <Box flexDirection="column" margin={1} flexGrow={1} borderStyle={"round"}>
       <Box flexDirection="row" justifyContent={"space-between"}>
@@ -29,7 +24,6 @@ export const Table = ({ pairs }) => {
             <Text color={"red"}>{item.bid}</Text>
             <Text color={"green"}>{item.ask}</Text>
             <Box width={20} />
-            <Text>{item.sparkLine}</Text>
           </Box>
         );
       })}
@@ -39,8 +33,6 @@ export const Table = ({ pairs }) => {
 
 export const DetailTable = ({ pairs }) => {
   console.log("Pairs: ", typeof pairs);
-  // TEMP Until we figure out what data to pass into this thing.
-  const sparkline = <Spark />;
 
   return (
     <Box flexDirection="column" margin={1} flexGrow={1} borderStyle={"round"}>
@@ -73,12 +65,9 @@ export const DetailTable = ({ pairs }) => {
                 {item.token1.symbol} Reserve: {item.reserve1}
               </Text>
             </Box>
-            <Text>{sparkline}</Text>
           </Box>
         );
       })}
     </Box>
   );
 };
-
-

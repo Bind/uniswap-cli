@@ -23,12 +23,12 @@ if (options.detail)
     .then(
       (pairs) => {
         const uniPairs = pairs.data.pairs;
-        const sortedUniPairs = uniPairs.sort((firstEl, secondEl) => {
-          const token0volumeUSD = Number(firstEl.volumeUSD);
-          const token1volumeUSD = Number(secondEl.volumeUSD);
-          return token0volumeUSD - token1volumeUSD;
-        });
-        const selectedPairs = sortedUniPairs.slice(0, 5);
+        // const sortedUniPairs = uniPairs.sort((firstEl, secondEl) => {
+        //   const token0volumeUSD = Number(firstEl.volumeUSD);
+        //   const token1volumeUSD = Number(secondEl.volumeUSD);
+        //   return token0volumeUSD - token1volumeUSD;
+        // });
+        const selectedPairs = uniPairs.slice(0, 5);
         render(React.createElement(DetailTable, { pairs: selectedPairs }));
       },
       (error) => {
