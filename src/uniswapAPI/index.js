@@ -1,5 +1,5 @@
 const axios = require("axios");
-const fetchPairs = async () => {
+export const fetchPairs = async () => {
   try {
     const response = await axios({
       url: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
@@ -45,7 +45,7 @@ const fetchPairs = async () => {
   }
 };
 
-const fetchById = async (id) => {
+export const fetchById = async (id) => {
   try {
     const query = `{
            tokenDayDatas(orderBy: date, orderDirection: asc,
@@ -80,7 +80,3 @@ const fetchById = async (id) => {
 };
 
 
-export default  {
-  fetchPairs,
-  fetchById,
-};
