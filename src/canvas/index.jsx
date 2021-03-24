@@ -24,4 +24,4 @@ const CanvasComponent = ({
   return <Text color={color}>{content}</Text>;
 };
 
-export default  CanvasComponent;
+export default CanvasComponent;

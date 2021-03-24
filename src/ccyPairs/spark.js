@@ -23,31 +23,23 @@ var yScale =
   .domain([0, max(rawData.map((d) => d.open))])
   .range([80, 0]);
 
-const lineGenerator = line()
+const draw = (ctx) => {
+  const lineGenerator = line()
   .x((d) => xScale(new Date(d.timestamp * 1000)))
   .y((d) => yScale(d.open));
-
-var canvas = new Canvas(50, 15);
-const draw = (ctx) => {
   ctx.clearRect(0, 0, ctx.width, ctx.height);
-  ctx.fillStyle = "red";
   ctx.beginPath();
   lineGenerator.context(ctx)(rawData);
-  // ctx.arc(ctx.width/2, ctx.height/2, 20*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
-  ctx.stroke();
-  ctx.closePath();
-  ctx.beginPath();
-  ctx.fillStyle = "#000000";
-  line.context(ctx)(rawData);
-  // ctx.arc(ctx.width/2, ctx.height/2, 20*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
   ctx.stroke();
   ctx.closePath();
   return ctx.toString();
 };
 const CanvasComponent = () => {
+  
   const [content, setContent] = React.useState("");
 
   React.useEffect(() => {
+    const canvas = new Canvas(50, 15);
     const c = canvas.getContext("2d");
     const timer = setInterval(() => {
       setContent(draw(c, 1000 / 30));
@@ -55,7 +47,7 @@ const CanvasComponent = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [draw]);
   return content;
 };
 
