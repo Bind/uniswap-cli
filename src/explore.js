@@ -1,5 +1,5 @@
 import { program } from "commander";
-import uniswapAPI from "./uniswapAPI";
+import { fetchById, fetchPairs } from "./uniswapAPI";
 
 program.version("0.0.1");
 
@@ -14,8 +14,7 @@ const options = program.opts();
 if (options.verbose) console.log("options: ", options);
 
 if (options.pairs) {
-  uniswapAPI
-    .fetchPairs()
+  fetchPairs()
     .then(
       (pairs) => {
         pairs.data.pairs.forEach((pair) => {
@@ -32,8 +31,7 @@ if (options.pairs) {
 }
 
 if (options.id) {
-  uniswapAPI
-    .fetchById(options.id)
+  fetchById(options.id)
     .then(
       (response) => {
         response.data.tokenDayDatas.forEach((data) => {

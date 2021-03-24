@@ -1,10 +1,9 @@
-
-import { render } from "ink"
+import { render } from "ink";
 import React from "react";
 import { program } from "commander";
 import { DetailTable, Table } from "./ccyPairs";
 
-import uniswapAPI from "./uniswapAPI";
+import { fetchPairs } from "./uniswapAPI";
 
 program.version("0.0.1");
 process.env.FORCE_COLOR = "1";
@@ -20,8 +19,7 @@ const options = program.opts();
 if (options.verbose) console.log("options: ", options);
 
 if (options.detail)
-  uniswapAPI
-    .fetchPairs()
+  fetchPairs()
     .then(
       (pairs) => {
         const uniPairs = pairs.data.pairs;
