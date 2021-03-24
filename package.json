@@ -21,8 +21,10 @@
     "utf-8-validate": "^5.0.4"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "pairs": "node src/pairs.js",
+    "start": "node dist/index.js",
+    "pairs": "node dist/pairs.js",
+    "explore": "node dist/explore.js",
+    "build:watch": "webpack -w",
     "build": "webpack"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
-const { program } = require("commander");
-const uniswapAPI = require("./uniswapAPI");
+import { program } from "commander";
+import uniswapAPI from "./uniswapAPI";
 
 program.version("0.0.1");
 

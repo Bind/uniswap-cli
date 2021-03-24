@@ -1,10 +1,10 @@
-const importJsx = require("import-jsx");
-const { render } = require("ink");
-const React = require("react");
-const { program } = require("commander");
-const { DetailTable, Table } = importJsx("./ccyPairs");
 
-const uniswapAPI = require("./uniswapAPI");
+import { render } from "ink"
+import React from "react";
+import { program } from "commander";
+import { DetailTable, Table } from "./ccyPairs";
+
+import uniswapAPI from "./uniswapAPI";
 
 program.version("0.0.1");
 process.env.FORCE_COLOR = "1";

@@ -2,7 +2,10 @@ const path = require('path');
  
 module.exports = {
   mode: "development",
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: {main: path.resolve(__dirname, './src/index.js'),
+  explore: path.resolve(__dirname, './src/explore.js'),
+  pairs: path.resolve(__dirname, './src/pairs.js')
+},
   target: "node",
   module: {
     rules: [
@@ -18,7 +21,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
