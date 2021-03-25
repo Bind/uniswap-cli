@@ -1,5 +1,10 @@
 import { program } from "commander";
-import { fetchById, fetchPairs, getBulkPairData } from "./uniswapAPI";
+import {
+  fetchById,
+  fetchPairData,
+  fetchPairs,
+  getBulkPairData,
+} from "./uniswapAPI";
 
 program.version("0.0.1");
 
@@ -7,6 +12,7 @@ program.option("-v, --verbose", "verbose output debugging");
 program.option("-p, --pairs", "fetch the pairs via graphql");
 program.option("-b, --bulkPairs", "fetch the pairs via graphql");
 program.option("-i, --id <id>", "fetch token day data for a pair id");
+program.option("-x, --pid <pid>", "fetch pair day data for a pair id");
 
 program.parse(process.argv);
 
@@ -37,6 +43,23 @@ if (options.id) {
       (response) => {
         response.data.tokenDayDatas.forEach((data) => {
           console.log("tokenData: ", data);
+        });
+      },
+      (error) => {
+        console.log("error fetching token data for id", error);
+      }
+    )
+    .catch((error) => {
+      console.log("Caught an error fetching token data for id: ", error);
+    });
+}
+
+if (options.pid) {
+  fetchPairData(options.pid)
+    .then(
+      (response) => {
+        response.data.pairDayDatas.forEach((data) => {
+          console.log("pairDataHistorical: ", data);
         });
       },
       (error) => {

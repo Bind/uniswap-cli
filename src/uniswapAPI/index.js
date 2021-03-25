@@ -93,6 +93,40 @@ export const fetchById = async (id) => {
   }
 };
 
+export const fetchPairData = async (id, numDaysAgo = 30) => {
+  const daysAgoStart = getUnixTime(
+    startOfMinute(sub(Date.now(), { days: numDaysAgo }))
+  );
+  try {
+    const query = `{
+       pairDayDatas(first: 100, orderBy: date, orderDirection: asc,
+         where: {
+           pairAddress: "${id}",
+           date_gt: ${daysAgoStart}
+         }
+       ) {
+           date
+           dailyVolumeToken0
+           dailyVolumeToken1
+           dailyVolumeUSD
+           reserveUSD
+       }
+      }`;
+
+    const response = await axios({
+      url: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+      method: "POST",
+      data: {
+        query,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log("Failed to fetch currency pairs: ", error);
+    throw Error("Failed to fetch currency pairs");
+  }
+};
+
 async function splitQuery(query, localClient, vars, list, skipCount = 100) {
   let fetchedData = {};
   let allFound = false;
