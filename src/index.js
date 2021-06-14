@@ -1,4 +1,5 @@
 process.env.FORCE_COLOR = "1";
+global.randomBytes = require("crypto").randomBytes;
 
 import { render } from "ink";
 import React from "react";
