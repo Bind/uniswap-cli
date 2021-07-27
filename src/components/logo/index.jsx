@@ -1,6 +1,6 @@
 import React from "react";
 import GetLogo from "./GetLogo.js";
-import CanvasComponent  from "../canvas/index.jsx";
+import CanvasComponent from "../../canvas/index.jsx";
 
 const LogoComponent = ({ height, width }) => {
   const [loaded, setLoaded] = React.useState(false);

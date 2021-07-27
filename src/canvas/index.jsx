@@ -1,4 +1,3 @@
-
 import Canvas from "../../deps/canvas";
 import React from "react";
 import { Text } from "ink";

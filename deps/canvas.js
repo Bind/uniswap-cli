@@ -1,6 +1,6 @@
 import Canvas from "./drawille";
 import bresenham from "bresenham";
-import {mat2d, vec2} from "gl-matrix";
+import { mat2d, vec2 } from "gl-matrix";
 import earcut from "earcut";
 
 function Context(width, height) {
@@ -359,4 +359,4 @@ function clamp(value, min, max) {
   return Math.round(Math.min(Math.max(value, min), max));
 }
 
-export default  Context;
+export default Context;
