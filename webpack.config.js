@@ -4,10 +4,6 @@ module.exports = {
   mode: "development",
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
-    explore: path.resolve(__dirname, "./src/explore.js"),
-    zerion: path.resolve(__dirname, "./src/zerion.js"),
-    pairs: path.resolve(__dirname, "./src/pairs.js"),
-    init: path.resolve(__dirname, "./src/init.js"),
   },
   target: "node",
   module: {

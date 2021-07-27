@@ -1,6 +1,6 @@
 import Canvas from "../../deps/canvas";
 import React from "react";
-import { Box, Text } from "ink";
+import { Text } from "ink";
 
 const CanvasComponent = ({
   color,

@@ -1,6 +1,6 @@
 {
   "name": "uni",
-  "bin": "./dist/main.js",
+  "bin": "./dist/index.js",
   "license": "MIT",
   "node": "./dist/bundle.js",
   "dependencies": {
@@ -15,8 +15,7 @@
     "bignumber.js": "^9.0.1",
     "bresenham": "^0.0.4",
     "bufferutil": "^4.0.3",
-    "commander": "^7.1.0",
-    "cross-fetch": "^3.1.2",
+    "commander": "^7.2.0",
     "d3-array": "^2.11.0",
     "d3-scale": "^3.2.3",
     "d3-shape": "^2.0.0",
@@ -24,6 +23,7 @@
     "dayjs": "^1.10.4",
     "decimal.js-light": "^2.5.1",
     "drawille-canvas": "^1.2.1",
+    "esbuild": "^0.12.8",
     "ethers@next": "^5.1.4",
     "gl-matrix": "^3.3.0",
     "graphql": "^15.5.0",
@@ -31,6 +31,8 @@
     "import-jsx": "^4.0.0",
     "ink": "^3.0.8",
     "logger": "^0.0.1",
+    "ink-select-input": "^4.2.0",
+    "node-fetch": "^2.6.1",
     "numeral": "^2.0.6",
     "performance-now": "^2.1.0",
     "pngjs": "^6.0.0",
@@ -41,11 +43,9 @@
     "utf-8-validate": "^5.0.4"
   },
   "scripts": {
-    "main": "node dist/main.js",
-    "pairs": "node dist/pairs.js",
-    "explore": "node dist/explore.js",
-    "build:watch": "webpack -w",
-    "build": "webpack"
+    "start": "node dist/index.js",
+    "build": "esbuild src/index.js --bundle --platform=node --target=es2020 --external:node:*   --outdir=dist",
+    "build:watch": "esbuild src/index.js --bundle --platform=node --target=es2020 --external:node:* --outdir=dist --watch"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
@@ -57,8 +57,6 @@
     "babel-loader": "^8.2.2",
     "babel-node": "^0.0.1-security",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "prettier": "^2.2.1",
-    "webpack": "^5.27.2",
-    "webpack-cli": "^4.5.0"
+    "prettier": "^2.2.1"
   }
 }
